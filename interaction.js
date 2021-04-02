@@ -16,6 +16,10 @@ function DnD(canvas, interactor) {
         var res = getMousePosition(canvas, evt);
         this.x_i = res.x;
         this.y_i = res.y;
+
+        interactor.onInteractionStart(this);
+        interactor.onInteractionUpdate(this);
+        interactor.onInteractionEnd(this);
     };
 
     this.move = function (evt) {
@@ -26,6 +30,10 @@ function DnD(canvas, interactor) {
             this.x_f = res.x;
             this.y_f = res.y;
             this.isPressed = false;
+
+            interactor.onInteractionStart(this);
+            interactor.onInteractionUpdate(this);
+            interactor.onInteractionEnd(this);
         }
     };
 
@@ -36,6 +44,10 @@ function DnD(canvas, interactor) {
             this.x_f = res.x;
             this.y_f = res.y;
             this.isPressed = false;
+
+            interactor.onInteractionStart(this);
+            interactor.onInteractionUpdate(this);
+            interactor.onInteractionEnd(this);
         }
     };
 
