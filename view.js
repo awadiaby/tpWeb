@@ -17,7 +17,7 @@ Line.prototype.paint = function (ctx) {
     form.paint(ctx);
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
-    ctx.lineTo(this.x + 20, this.y + 20);
+    ctx.lineTo(this.x_f, this.y_f); //COmment avoir ici les coordonnees finales?
     ctx.stroke();
 };
 

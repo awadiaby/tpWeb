@@ -8,10 +8,12 @@ function Form(couleur, epaisseur) {
     this.epaisseur = epaisseur;
 }
 
-function Line(x, y) {
+function Line(x, y, x_f, y_f) {
     Form.call(this);
     this.x = x;
     this.y = y;
+    this.x_f = x_f;
+    this.y_f = y_f;
 }
 
 function Rectangle(x_top_left, y_top_left, width, length, epaisseur, couleur) {

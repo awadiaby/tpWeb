@@ -11,42 +11,32 @@ function DnD(canvas, interactor) {
     // Developper les 3 fonctions gérant les événements
 
     this.press = function (evt) {
-        console.log("press");
         this.isPressed = true;
         var res = getMousePosition(canvas, evt);
         this.x_i = res.x;
         this.y_i = res.y;
 
         interactor.onInteractionStart(this);
-        interactor.onInteractionUpdate(this);
-        interactor.onInteractionEnd(this);
     };
 
     this.move = function (evt) {
-        console.log("move");
         if (this.isPressed) {
-            console.log("release");
             var res = getMousePosition(canvas, evt);
             this.x_f = res.x;
             this.y_f = res.y;
-            this.isPressed = false;
 
-            interactor.onInteractionStart(this);
             interactor.onInteractionUpdate(this);
-            interactor.onInteractionEnd(this);
         }
     };
 
     this.release = function (evt) {
         if (this.isPressed) {
-            console.log("release");
+            console.log("release")
             var res = getMousePosition(canvas, evt);
             this.x_f = res.x;
             this.y_f = res.y;
             this.isPressed = false;
 
-            interactor.onInteractionStart(this);
-            interactor.onInteractionUpdate(this);
             interactor.onInteractionEnd(this);
         }
     };
@@ -69,7 +59,7 @@ function getMousePosition(canvas, evt) {
         x: evt.clientX - rect.left,
         y: evt.clientY - rect.top
     };
-};
+}
 
 
 
